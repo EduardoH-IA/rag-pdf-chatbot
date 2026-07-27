@@ -12,7 +12,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from src.config import DOCS_PATH, FAISS_INDEX_PATH
-from src.database import insert_document, insert_section
+from src.database import init_db, insert_document, insert_section
 from collections import defaultdict
 
 

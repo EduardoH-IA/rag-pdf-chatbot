@@ -37,7 +37,7 @@ La solución se divide en dos componentes principales:
 
 ## Arquitectura inicaal para el despliegue en Oracle Cloud Infraestrcture (OCI)
 
-![alt text](arquitectura_oci_rag_chatbot.png)  
+![Arquitectura RAG Chatbot IA](/imgs/arquitectura_oci_rag_chatbot.png)  
 
 ## Tecnologías Utilizadas
 
@@ -75,8 +75,12 @@ rag-pdf-chatbot/
 ## Requisitos y Paquetes Requeridos
 
 - Python 3.10 o superior
+- PIP 
+- FAISS (base de datos vectorial local)
 - MariaDB/MySQL Server 8.0+
-- Cuenta de Google AI Studio (para API Key de Gemini) (Chatbot)
+- all-MiniLM-L6-v2 Procesamiento de Lenguaje Natural (NLP) (embeddings locales)
+- Cuenta de Google AI Studio (para API Key de Gemini) (recuperación)
+- Gemini-3.5-flash (LLM) 
 
 # Paquetes Requeridos
 
@@ -175,3 +179,17 @@ python src/ingest.py
 streamlit run streamlit_app.py
 ```
 La aplicación estará disponible en http://localhost:8501.
+
+## ¿Cómo funciona?
+
+Se trata de una pantalla dividida en dos partes, la barra lateral izquierda y el contenido principal.
+
+### Barra lateral izquierda
+
+En la barra lateral izquierda se encuentra el menú de documentos, donde se pueden ver los documentos que se han indexado en la base de datos.
+
+### Contenido principal
+
+En el contenido principal se encuentra el chatbot, donde se pueden visualizar un conjunto de botones asociados a cada sección de los documentos a consulta o simplemente se puede hacer preguntas en el espacio chatbot para obtener información sobre los documentos que se han indexado en la base de datos.
+
+![Home Chatbot IA + RAG](/imgs/rag_chatbot-IA_IMG_Home.png)  
