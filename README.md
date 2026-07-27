@@ -114,25 +114,25 @@ documents (1) ───────< (N) document_sections
 ## Campos por Tabla
 
 ### documents (tabla)
-id (PK, INT, AUTO_INCREMENT)
-filename (VARCHAR 255)
-title (VARCHAR 255)
-total_pages (INT)
-indexed_at (TIMESTAMP)
+-   id (PK, INT, AUTO_INCREMENT)
+-   filename (VARCHAR 255)
+-   title (VARCHAR 255)
+-   total_pages (INT)
+-   indexed_at (TIMESTAMP)
 
 ### document_sections (tabla)
-id (PK, INT, AUTO_INCREMENT)
-doc_id (FK, INT)
-section_title (VARCHAR 500)
-page_start (INT)
-page_end (INT)
+-   id (PK, INT, AUTO_INCREMENT)
+-   doc_id (FK, INT)
+-   section_title (VARCHAR 500)
+-   page_start (INT)
+-   page_end (INT)
 
 ### conversations (tabla)
-id (PK, INT, AUTO_INCREMENT)
-session_id (VARCHAR 100)
-role (ENUM: 'user', 'assistant')
-message (TEXT)
-timestamp (TIMESTAMP)
+-   id (PK, INT, AUTO_INCREMENT)
+-   session_id (VARCHAR 100)
+-   role (ENUM: 'user', 'assistant')
+-   message (TEXT)
+-   timestamp (TIMESTAMP)
 
 ## Instalación y ejecución
 
