@@ -97,7 +97,7 @@ rag-pdf-chatbot/
 
 # Base de datos
 
-# Estructura y Modelo de Entidad Relación (MER)
+## Estructura y Modelo de Entidad Relación (MER)
 
 La base de datos rag_chatbot contiene las siguientes tablas:
 
@@ -107,13 +107,13 @@ La base de datos rag_chatbot contiene las siguientes tablas:
 | `document_sections` | Guarda las secciones/temas detectados en cada documento |
 | `conversations`     | Historial completo de conversaciones del chatbot        |
 
-# Diagrama Relacional (Modelo Entidad Relación)
+## Diagrama Relacional (Modelo Entidad Relación)
 
 documents (1) ───────< (N) document_sections
     │
     └── No relación directa con conversations (independiente)
 
-# Diccionario de Datos
+## Diccionario de Datos
 
 ## Campos por Tabla
 
@@ -138,22 +138,24 @@ documents (1) ───────< (N) document_sections
 -   message (TEXT)
 -   timestamp (TIMESTAMP)
 
-## Instalación y ejecución
+# Instalación y ejecución
 
-# Preparar de la Base de Datos
+## Preparar de la Base de Datos
 ```bash
 mysql -u root -p < sql/schema.sql
 ```
-# Crear entorno virtual
-    ```bash
+
+## Crear entorno virtual
+```bash
 python -m venv venv
 ```
 
-# Activar entorno virtual
+## Activar entorno virtual
 ```bash
 source venv/bin/activate
 ```
-# Configurar variables de entorno
+
+## Configurar variables de entorno
 ```bash
 cp .env.example .env
 ``` 
@@ -162,34 +164,38 @@ Edita el archivo .env con tus credenciales:
 - GOOGLE_API_KEY: Obténla desde Google AI Studio
 - DB_PASSWORD: Contraseña de tu usuario MySQL
 
-# Instalar de dependencias:
+## Instalar de dependencias:
 ```bash 
 pip install -r requirements.txt
 ```
-# Preparar PDF
+## Preparar PDF
 Copiar archivos PDF a la carpeta docs/
 
-# Ejecutar el pipeline de Ingesta de PDF
+## Ejecutar el pipeline de Ingesta de PDF
 ```bash
 python src/ingest.py
 ```
 
-# Ejecutar el Chatbot
+## Ejecutar el Chatbot
 ```bash
 streamlit run streamlit_app.py
 ```
 La aplicación estará disponible en http://localhost:8501.
 
-## ¿Cómo funciona?
+# ¿Cómo funciona?
 
 Se trata de una pantalla dividida en dos partes, la barra lateral izquierda y el contenido principal.
 
-### Barra lateral izquierda
+## Barra lateral izquierda
 
 En la barra lateral izquierda se encuentra el menú de documentos, donde se pueden ver los documentos que se han indexado en la base de datos.
 
-### Contenido principal
+## Contenido principal
 
-En el contenido principal se encuentra el chatbot, donde se pueden visualizar un conjunto de botones asociados a cada sección de los documentos a consulta o simplemente se puede hacer preguntas en el espacio chatbot para obtener información sobre los documentos que se han indexado en la base de datos.
+En el contenido principal se encuentra el chatbot, donde se pueden visualizar un conjunto de botones asociados a cada sección contenida en los documentos a consultar. 
+
+Opción 1: Se puede realizar preguntas en lenguaje natural en el espacio chatbot para obtener información contenido en los documentos que se han indexado en la base de datos.
+
+Opción 2: Se puede consultar a través de los botones que se muestran en la sección central  que tambien se corresponden con el contenido indexado.
 
 ![Home Chatbot IA + RAG](/imgs/rag_chatbot-IA_IMG_Home.png)  
