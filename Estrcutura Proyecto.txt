@@ -1,0 +1,17 @@
+rag-pdf-chatbot/
+├── .env.example
+├── .gitignore
+├── README.md
+├── Instalación.md
+├── requirements.txt
+├── docs/                     # PDFs a consultar
+├── imgs/                     # Iconos e imágenes de la UI
+├── sql/
+│   └── schema.sql            # Script MySQL
+└── src/
+    ├── __init__.py
+    ├── config.py             # Variables de entorno
+    ├── database.py           # Conexión y modelos MySQL
+    ├── ingest.py             # Pipeline de Ingesta
+    ├── rag_engine.py         # Motor RAG + Gemini
+    └── app.py                # Interfaz Web (Streamlit)
