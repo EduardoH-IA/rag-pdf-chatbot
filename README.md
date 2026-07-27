@@ -138,6 +138,17 @@ documents (1) ───────< (N) document_sections
 -   message (TEXT)
 -   timestamp (TIMESTAMP)
 
+# creación de la base de datos
+
+```bash
+CREATE DATABASE IF NOT EXISTS rag_chatbot 
+    CHARACTER SET utf8mb4 
+    COLLATE utf8mb4_unicode_ci;
+    FLUSH PRIVILEGES;
+EXIT;
+```
+
+
 # Instalación y ejecución
 
 ## Preparar de la Base de Datos
